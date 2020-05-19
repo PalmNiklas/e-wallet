@@ -1,8 +1,8 @@
 <template>
 <div>
     <top title="Add a new Bank Card"/>
-    <card :cardData="cardData"/>
-    <card-form/>   
+    <card :cardData="cardData" />
+    <card-form v-on:addCard="newCard"/>   
     
 </div>
 
@@ -14,20 +14,22 @@ import CardForm from '../components/CardForm'
 
 
 export default {
-  name: 'AddCard',
+  // name: 'AddCard',
   components: {
     Top,
      Card,
      CardForm
   },
   methods: {
-    //   getData(){
-    //       data = this.$root.card
-    //   }
+    newCard(newCard){
+    this.cardData = newCard
+    
+    },
+    
   },
   data () {
       return{
-    cardData: this.$root.cardData
+    cardData: this.$root.cardData[0]
       }
   }
 }

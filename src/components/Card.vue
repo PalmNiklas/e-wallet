@@ -15,7 +15,7 @@ export default {
         cardData: {
             number: Number,
             name: String,
-            date: Date,
+            date: String,
             ccv: Number,
             vendor: {
                 bitcoin: 'Bitcoin',
