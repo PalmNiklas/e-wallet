@@ -1,8 +1,8 @@
 <template>
 <div>
     <top title="Add a new Bank Card" subtitle="New card"/>
-    <card :cardData="cardData" />
-    <card-form v-on:addCard="newCard"/>   
+    <card :cardData="placeholder" />
+    <card-form v-on:updateCard="updatePlaceholder"/>   
     <router-link to="/" tag="button">Back</router-link>
     
 </div>
@@ -27,11 +27,16 @@ export default {
     this.cardData = newCard
     
     },
+    updatePlaceholder(card){
+      console.log("input recieved")
+    this.placeholder = card
+    }
     
   },
   data () {
       return{
     // cardData: this.$root.cardData[0]
+      placeholder: Object
       }
   },
   computed: {
@@ -43,6 +48,11 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+button{
+  margin:2rem ;
+  font-size: 1rem;
+}
+
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-<article class="card" v-bind="getColor">
+<article class="card" v-bind="getColor" @click="$emit('getCard')">
     <div class="content">
         <vendor v-bind="getVendor"/>
 

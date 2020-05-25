@@ -1,7 +1,7 @@
 <template>
 
     <article class="card-stack">
-        <card class="card" v-for="(card, index) in getCards" v-bind:key="index" :cardData="card"/>
+        <card class="card" v-for="(card, index) in getCards" v-bind:key="index" :cardData="card" @getCard="getCard()"/>
         
     </article>
 
@@ -19,12 +19,18 @@ export default {
     }),
     
     methods: {
+         getCard: function(){
+            console.log("card clicked")
+            return store.getters.getFirst
+        }
 
     },
     computed: {
         getCards(){
         return store.getters.getAll
-        }
+        },
+       
+
     }
     
 }
