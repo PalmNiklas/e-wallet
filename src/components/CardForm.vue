@@ -12,6 +12,7 @@
     </div>
 </template>
 <script>
+import store from '../store'
 
 export default {
     name: 'CardForm',
@@ -37,7 +38,9 @@ export default {
             this.tempCard.name = this.tempName
             this.tempCard.date = this.tempValidDate
             this.tempCard.ccv = this.tempVendor
-            this.$emit("addCard", this.tempCard)
+            // this.$emit("addCard", this.tempCard)
+            store.commit('addCard', this.tempCard)
+
                     },
 
     },

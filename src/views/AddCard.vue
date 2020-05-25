@@ -3,6 +3,7 @@
     <top title="Add a new Bank Card"/>
     <card :cardData="cardData" />
     <card-form v-on:addCard="newCard"/>   
+    <router-link to="/">Back</router-link>
     
 </div>
 
@@ -11,6 +12,7 @@
 import Top from '../components/Top'
 import Card from '../components/Card'
 import CardForm from '../components/CardForm'
+import store from '../store'
 
 
 export default {
@@ -29,8 +31,13 @@ export default {
   },
   data () {
       return{
-    cardData: this.$root.cardData[0]
+    // cardData: this.$root.cardData[0]
       }
+  },
+  computed: {
+    cardData(){
+      return store.getters.getFirst
+    }
   }
 }
 

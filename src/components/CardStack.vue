@@ -1,12 +1,12 @@
 <template>
 <article class="card-stack">
-    <card/>
-    <card/>
-    <card/>
+    <card v-for="(card, index) in getCards" v-bind:key="index" :cardData="card"/>
+    
 </article>
 </template>
 <script>
 import Card from '../components/Card'
+import store from '../store'
 export default {
     components: {
         Card,
@@ -18,10 +18,22 @@ export default {
     
     methods: {
 
+    },
+    computed: {
+        getCards(){
+        return store.getters.getAll
+        }
     }
+    
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+ 
+.active{
+    display: none;
+}
 
 </style>
+
+
