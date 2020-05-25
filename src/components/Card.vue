@@ -112,6 +112,7 @@ $base-color-yellow: #fbb241;
     margin: 1rem;
     font-family: 'DM Mono', monospace;
     font-weight: 300;
+    transition: 0.3s;
 
     .content{
         padding: 1rem;
@@ -167,6 +168,11 @@ $base-color-yellow: #fbb241;
 .card[blue]{
     background-color: $base-color-blue;
     color: white;
+}
+
+.card:hover{
+    cursor: pointer;
+    margin-top: 5px;
 }
 
 

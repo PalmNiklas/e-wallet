@@ -1,9 +1,9 @@
 <template>
 <div>
-    <top title="Add a new Bank Card"/>
+    <top title="Add a new Bank Card" subtitle="New card"/>
     <card :cardData="cardData" />
     <card-form v-on:addCard="newCard"/>   
-    <router-link to="/">Back</router-link>
+    <router-link to="/" tag="button">Back</router-link>
     
 </div>
 
